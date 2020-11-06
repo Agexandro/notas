@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bulma.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">Mi block de notas</h1>
+    </header>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-4">
+                <a class="add">+</a>
+            </div>
+        </div>
+    </div><!--container-->
+
+    <div id="mod">
+        <div id="mod_box">
+            <p id="mod_title">Agregar nota</p>
+            <div class="mod_content">
+                <input type="text" placeholder="Titulo" id="titulo">
+                <textarea name="texto" id="texto" cols="30" rows="10"></textarea>
+                <a id="save" class="button is-primary">Guardar</a>
+                <a id="cancel" class="button is-danger">Cancelar</a>
+            </div>
+        </div>
+    </div><!--modal-->
+    <script src="script.js"></script>
+</body>
+</html>
