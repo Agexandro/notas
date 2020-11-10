@@ -24,6 +24,15 @@ h1 {
 .nota {
   border: 1px solid lightgray;
   padding: 5px;
+  color: white;
+}
+
+.nota:hover {
+    box-shadow: 2px 2px 8px black;
+  }
+
+.nota, .add {
+    border-radius: 5px;
 }
 
 .columns .column h1 {
@@ -79,11 +88,11 @@ h1 {
 }
 
 #titulo {
-    font-size: 24px;
+    font-size: 26px;
 }
 
 #texto {
-    font-size: 20px;
+    font-size: 22px;
     padding: 5px;
     border-radius: 4px;
     resize: none;
