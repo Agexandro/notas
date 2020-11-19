@@ -14,17 +14,16 @@ h1 {
 
 .add {
     display: block;
-    font-size: 120px;
+    font-size: 50px;
     text-align: center;
-    font-weight: 700;
-    background-color: beige;
+    font-weight: 600;
+    background-color: rgb(70, 218, 65);
     color: black;
 }
 
 .nota {
   border: 1px solid lightgray;
   padding: 5px;
-  color: white;
 }
 
 .nota:hover {
