@@ -2,9 +2,12 @@ var titulos = new Array()
 var textos = new Array()
 var numero_notas = 0
 
-function save() {
-
+function clear(){
     document.getElementById("contenedor").innerHTML = "";
+}
+
+function save() {
+    
     titulos.push(document.getElementById("titulo").value)
     textos.push(document.getElementById("texto").value)
     numero_notas++
@@ -19,6 +22,7 @@ function save() {
 }
 
 function load() {
+    clear()
     var columnas = -1
 
     for (let indice = 0; indice < numero_notas; indice++) {
@@ -34,11 +38,19 @@ function load() {
 }
 
 
-function position(el){
-    alert(el.id)
+function $delete(id){
+    var posicion = id.id*1
+    --numero_notas
+    for (let index = posicion; index < numero_notas; index++) {
+        titulos[index] = titulos[index+1]
+        textos[index] = textos[index+1]
+    }
+    titulos.pop()
+    textos.pop()
+    load()
 }
 
 
 function inner(indice){
-    return "<div onclick='position(this)' id='"+indice+"' class='column is-4'><div class='nota'><h1>" + titulos[indice] + "</h1><p>" + textos[indice] + "</p></div></div>"
+    return "<div onclick='$delete(this)' id='"+indice+"' class='column is-4'><div class='nota'><h1>" + titulos[indice] + "</h1><p>" + textos[indice] + "</p></div></div>"
 }
