@@ -31,7 +31,7 @@ function load() {
         if (indice % 3 != 0) {
             document.getElementsByClassName("columns")[columnas].innerHTML += inner(indice)
         } else {
-            document.getElementsByClassName("container")[0].innerHTML += "<div class='columns'></div>"
+            document.getElementById("contenedor").innerHTML += "<div class='columns'></div>"
             columnas++
             document.getElementsByClassName("columns")[columnas].innerHTML += inner(indice)
         }
