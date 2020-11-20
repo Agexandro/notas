@@ -1,6 +1,7 @@
 var titulos = new Array()
 var textos = new Array()
 var numero_notas = 0
+var deleteItem = 0
 
 function clear(){
     document.getElementById("contenedor").innerHTML = "";
@@ -38,10 +39,9 @@ function load() {
 }
 
 
-function $delete(id){
-    var posicion = id.id*1
+function $delete(){
     --numero_notas
-    for (let index = posicion; index < numero_notas; index++) {
+    for (let index = deleteItem; index < numero_notas; index++) {
         titulos[index] = titulos[index+1]
         textos[index] = textos[index+1]
     }
@@ -52,5 +52,11 @@ function $delete(id){
 
 
 function inner(indice){
-    return "<div onclick='$delete(this)' id='"+indice+"' class='column is-4'><div class='nota'><h1>" + titulos[indice] + "</h1><p>" + textos[indice] + "</p></div></div>"
+    return "<div class='column is-4'><a class='delete' onclick='getId(this)' id='"+indice+"'>x</a><div class='nota'><h1>" + titulos[indice] + "</h1><p>" + textos[indice] + "</p></div></div>"
+}
+
+
+function getId(id){
+    deleteItem = id.id*1
+    document.getElementById("delete_mod").style.display = "block"
 }

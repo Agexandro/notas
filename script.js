@@ -17,4 +17,19 @@ window.onload = function () {
       save()
     }
   )
+
+    //eliminar nota
+    document.getElementById("delete_btn").addEventListener('click',
+    function () {
+      $delete()
+    document.getElementById("delete_mod").style.display = "none"
+    }
+  )
+
+    //cancelar eliminacion nota
+    document.getElementById("cancel_btn").addEventListener('click',
+    function () {
+      document.getElementById("delete_mod").style.display = "none"
+    }
+  )
 }
