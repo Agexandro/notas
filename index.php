@@ -13,16 +13,14 @@
     <header>
         <h1 class="title">Mi block de notas</h1>
     </header>
-    <div>
-        <a id="add" class="add">+</a>
-    </div>
+        <a id="add" class="add" >+</a>
     <div id="contenedor" class="container">
     </div>
     <!--container-->
 
     <div id="mod" class="mod">
         <div class="mod_box">
-            <p class="mod_title">Agregar nota</p>
+            <p class="mod_title">Nota</p>
             <p style="text-align:center; color:red; display:none" id="alerta">No se permiten campos vacios</p>
             <div>
                 <input type="text" placeholder="Titulo" id="titulo">
@@ -51,6 +49,8 @@
             </div>
         </div>
     </div>
+    <div style="background:red; width:20px">fffffffffffffffffffffffffffffffffffffffffffffff</div>
+    <p style="background:red; width:100px; display:inline">kjjjjfffffffffffffjjjjjkkkkkkkkkkkkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</p>
     <script src="crud.js"></script>
     <script src="script.js"></script>
 </body>

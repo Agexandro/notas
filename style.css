@@ -3,13 +3,19 @@
     margin: 0;
 }
 
+html {
+    background-color: #8f71e2;
+}
+
 header {
     border-bottom: 1px solid lightgray;
 }
 
-h1 {
+.title {
     text-align: center;
     padding: 10px;
+    color: white;
+    text-shadow: black 4px 4px 4px;
 }
 
 .add {
@@ -17,18 +23,29 @@ h1 {
     font-size: 50px;
     text-align: center;
     font-weight: 600;
-    background-color: rgb(70, 218, 65);
+    background-color: rgb(224, 255, 24);
     color: black;
 }
 
 .nota {
-  border: 1px solid lightgray;
+  border: 2px solid blue;
   padding: 5px;
+  background-color: lightskyblue;
+}
+
+.nota h1 {
+    border-bottom: blue 1px solid;
+    color: black;
+}
+
+.nota p {
+    margin: 10px 0px;
+    color: black;
 }
 
 .nota:hover {
     box-shadow: 2px 2px 8px black;
-  }
+}
 
 .nota, .add {
     border-radius: 5px;
@@ -50,6 +67,7 @@ h1 {
 
 .add:hover {
     box-shadow: 2px 2px 8px black;
+    color: white;
 }
 
 .mod {
@@ -101,3 +119,31 @@ a.update {
 a.update:hover {
     color: red;
 }
+
+@media only screen and (max-width:768px){
+   #mod .mod_box {
+        width: 22rem;
+        background-color: white;
+        margin: 0px auto 0px auto;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    #mod #texto {
+        font-size: 22px;
+        padding: 5px;
+        border-radius: 4px;
+        resize: none;
+        height: 130px;
+    }
+    .add {
+        width: 80px;
+        font-size: 50px;
+        font-weight: 600;
+        background-color: rgb(224, 255, 24);
+        border-radius: 50%;
+        position: absolute;
+        bottom: 0;
+        margin: 0px 0px 15px 15px;
+    }
+}
+
