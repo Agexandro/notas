@@ -92,3 +92,12 @@ h1 {
     border-radius: 4px;
     resize: none;
 }
+
+a.update {
+    color: black;
+    margin-left: 10px;
+}
+
+a.update:hover {
+    color: red;
+}

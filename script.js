@@ -2,7 +2,10 @@ window.onload = function () {
   //Oculta el modal
   document.getElementById("cancel").addEventListener("click",
     function () {
+      class_name = ""
+      reset_inputs()
       document.getElementById("mod").style.display = "none"
+      document.getElementById("alerta").style.display = "none";
     })
 
   //Muestra el modal
@@ -14,21 +17,26 @@ window.onload = function () {
   //agrega una nueva nota
   document.getElementById("save").addEventListener('click',
     function () {
-      save()
+      if (class_name == "update") {
+        update()
+      } else {
+        save()
+      }
     }
   )
 
-    //eliminar nota
-    document.getElementById("delete_btn").addEventListener('click',
+  //eliminar nota
+  document.getElementById("delete_btn").addEventListener('click',
     function () {
       $delete()
-    document.getElementById("delete_mod").style.display = "none"
+      document.getElementById("delete_mod").style.display = "none"
     }
   )
 
-    //cancelar eliminacion nota
-    document.getElementById("cancel_btn").addEventListener('click',
+  //cancelar eliminacion nota
+  document.getElementById("cancel_btn").addEventListener('click',
     function () {
+      document.getElementById("alerta").style.display = "none"
       document.getElementById("delete_mod").style.display = "none"
     }
   )

@@ -23,6 +23,7 @@
     <div id="mod" class="mod">
         <div class="mod_box">
             <p class="mod_title">Agregar nota</p>
+            <p style="text-align:center; color:red; display:none" id="alerta">No se permiten campos vacios</p>
             <div>
                 <input type="text" placeholder="Titulo" id="titulo">
                 <textarea name="texto" id="texto" cols="30" rows="6"></textarea>
@@ -36,7 +37,6 @@
     <div id="delete_mod" class="mod">
         <div class="mod_box">
             <p class="mod_title">¿Eliminar nota?</p>
-            <input id="hidden" type="text" hidden value="0">
             <div>
                 <div class="columns">
                     <div class="column">

@@ -1,25 +1,34 @@
 var titulos = new Array()
 var textos = new Array()
 var numero_notas = 0
-var deleteItem = 0
+var item = 0
+var class_name = ""
 
-function clear(){
+function clear() {
     document.getElementById("contenedor").innerHTML = "";
 }
 
-function save() {
-    
-    titulos.push(document.getElementById("titulo").value)
-    textos.push(document.getElementById("texto").value)
-    numero_notas++
-
-    load()
-
-    document.getElementById("mod").style.display = "none"
-
+function reset_inputs() {
     //Eliminar textos
     document.getElementById("texto").value = ""
     document.getElementById("titulo").value = ""
+}
+
+function save() {
+    const val1 = document.getElementById("titulo").value
+    const val2 = document.getElementById("texto").value
+
+    if (val1 != "" && val2 != "") {
+        document.getElementById("alerta").style.display = "none";
+        titulos.push(val1)
+        textos.push(val2)
+        numero_notas++
+        load()
+        document.getElementById("mod").style.display = "none"
+        reset_inputs()
+    } else {
+        document.getElementById("alerta").style.display = "block";
+    }
 }
 
 function load() {
@@ -39,24 +48,46 @@ function load() {
 }
 
 
-function $delete(){
+function $delete() {
     --numero_notas
-    for (let index = deleteItem; index < numero_notas; index++) {
-        titulos[index] = titulos[index+1]
-        textos[index] = textos[index+1]
+    for (let index = item; index < numero_notas; index++) {
+        titulos[index] = titulos[index + 1]
+        textos[index] = textos[index + 1]
     }
     titulos.pop()
     textos.pop()
     load()
 }
 
-
-function inner(indice){
-    return "<div class='column is-4'><a class='delete' onclick='getId(this)' id='"+indice+"'>x</a><div class='nota'><h1>" + titulos[indice] + "</h1><p>" + textos[indice] + "</p></div></div>"
+function update() {
+    const val1 = document.getElementById("titulo").value
+    const val2 = document.getElementById("texto").value
+    if (val1 != "" && val2 != "") {
+        titulos[item] = (val1)
+        textos[item] = (val2)
+        load()
+        document.getElementById("mod").style.display = "none"
+        reset_inputs()
+        class_name = ""
+    } else {
+        document.getElementById("alerta").style.display = "block";
+    }
 }
 
 
-function getId(id){
-    deleteItem = id.id*1
-    document.getElementById("delete_mod").style.display = "block"
+function inner(indice) {
+    return "<div class='column is-4'><a class='delete' onclick='getId(this)' id='" + indice + "'></a><a class='update' onclick='getId(this)' id='" + indice + "'>Editar</a><div class='nota'><h1>" + titulos[indice] + "</h1><p>" + textos[indice] + "</p></div></div>"
+}
+
+
+function getId(id) {
+    item = id.id * 1
+    class_name = id.className
+    if (class_name == "delete") {
+        document.getElementById("delete_mod").style.display = "block"
+    } else if (class_name == "update") {
+        document.getElementById("titulo").value = titulos[item]
+        document.getElementById("texto").value = textos[item]
+        document.getElementById("mod").style.display = "block"
+    }
 }
