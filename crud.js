@@ -2,7 +2,7 @@ var titulos = new Array()
 var textos = new Array()
 var numero_notas = 0
 var item = 0
-var class_name = ""
+var item_name = ""
 
 function clear() {
     document.getElementById("contenedor").innerHTML = "";
@@ -68,7 +68,7 @@ function update() {
         load()
         document.getElementById("mod").style.display = "none"
         reset_inputs()
-        class_name = ""
+        item_name = ""
     } else {
         document.getElementById("alerta").style.display = "block";
     }
@@ -76,16 +76,16 @@ function update() {
 
 
 function inner(indice) {
-    return "<div class='column is-4'><a class='delete' onclick='getId(this)' id='" + indice + "'></a><a class='update' onclick='getId(this)' id='" + indice + "'>Editar</a><div class='nota'><h1>" + titulos[indice] + "</h1><p>" + textos[indice] + "</p></div></div>"
+    return "<div class='column is-4'><a name='del' class='del fas fa-trash' onclick='getId(this)' id='" + indice + "'></a><a name='update' class='fas fa-edit' onclick='getId(this)' id='" + indice + "'></a><div class='nota'><h1>" + titulos[indice] + "</h1><p>" + textos[indice] + "</p></div></div>"
 }
 
 
 function getId(id) {
     item = id.id * 1
-    class_name = id.className
-    if (class_name == "delete") {
+    item_name = id.name
+    if (item_name == "del") {
         document.getElementById("delete_mod").style.display = "block"
-    } else if (class_name == "update") {
+    } else if (item_name == "update") {
         document.getElementById("titulo").value = titulos[item]
         document.getElementById("texto").value = textos[item]
         document.getElementById("mod").style.display = "block"

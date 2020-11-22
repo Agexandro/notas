@@ -28,19 +28,23 @@ header {
 }
 
 .nota {
-  border: 2px solid blue;
   padding: 5px;
-  background-color: lightskyblue;
+  background-color: rgb(224, 255, 24);
+
 }
 
 .nota h1 {
-    border-bottom: blue 1px solid;
+    border-bottom: white 2px solid;
     color: black;
+    word-break: break-all;
+    hyphens: auto;
 }
 
 .nota p {
     margin: 10px 0px;
     color: black;
+    word-break: break-all;
+    hyphens: auto;
 }
 
 .nota:hover {
@@ -102,6 +106,7 @@ header {
 
 #titulo {
     font-size: 26px;
+    text-align: center;
 }
 
 #texto {
@@ -109,15 +114,6 @@ header {
     padding: 5px;
     border-radius: 4px;
     resize: none;
-}
-
-a.update {
-    color: black;
-    margin-left: 10px;
-}
-
-a.update:hover {
-    color: red;
 }
 
 @media only screen and (max-width:768px){
@@ -147,3 +143,7 @@ a.update:hover {
     }
 }
 
+.fas {
+    color: white;
+    padding: 0px 5px;
+}

@@ -2,7 +2,7 @@ window.onload = function () {
   //Oculta el modal
   document.getElementById("cancel").addEventListener("click",
     function () {
-      class_name = ""
+      item_name = ""
       reset_inputs()
       document.getElementById("mod").style.display = "none"
       document.getElementById("alerta").style.display = "none";
@@ -17,7 +17,7 @@ window.onload = function () {
   //agrega una nueva nota
   document.getElementById("save").addEventListener('click',
     function () {
-      if (class_name == "update") {
+      if (item_name == "update") {
         update()
       } else {
         save()

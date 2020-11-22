@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="bulma.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fa/css/all.min.css" />
 </head>
 
 <body>
@@ -49,8 +50,6 @@
             </div>
         </div>
     </div>
-    <div style="background:red; width:20px">fffffffffffffffffffffffffffffffffffffffffffffff</div>
-    <p style="background:red; width:100px; display:inline">kjjjjfffffffffffffjjjjjkkkkkkkkkkkkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</p>
     <script src="crud.js"></script>
     <script src="script.js"></script>
 </body>
